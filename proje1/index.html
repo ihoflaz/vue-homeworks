@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <p>{{ content }}</p>
+        <a 
+        :href="link.url"
+        :target="link.target"
+        :alt="link.alt"
+        :custom="special"
+        >{{ link.title }}</a>
+        <br><br>
+        <button v-on:click="changeTitle('Buton 1')">Title Değiştir....</button>
+        <button @click="changeTitle('Buton 2')">Title Değiştir 2....</button>
+        <div class="box" @mousemove="updateCoords('Mouse move', $event)" @click="changeTitle('Box Title')"></div>
+        <span>{{ coords.x }}, {{ coords.y }}</span>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        {{ showBorder }}
+        <br>
+        <br>
+        <button @click="showBorder = !showBorder">Border Ekle/Kaldır</button>
+        <br>
+        <br>
+        {{ rBG }}
+        <br>
+        <br>
+        <button @click="rBG = !rBG">Kırmızı Ekle/Kaldır</button>
+        <br>
+        <br>
+        <input type="text" v-model="bgColor" placeholder="Back Ground Color">
+        <br>
+        <br>
+        <input type="text" v-model="bRadius" placeholder="Border Radius">
+        <br>
+        <br>
+        <div 
+        class="box" 
+        :style="[{ backgroundColor : bgColor },{ borderRadius : bRadius }]"
+        :class="boxClasses"
+        ></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
